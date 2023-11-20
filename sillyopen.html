@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Silly</title>
+  <script src="opener.js"></script>
+</head>
+<style>
+  body {
+      background-color: blue;
+  }
+
+  h1 {
+      color: black;
+  }
+</style>
+<script>
+  function onPageLoad() {
+      setInterval(flashBackground, 10);
+      setInterval(flashText, 50);
+  }
+
+  function flashBackground() {
+      var body = document.body;
+      body.style.backgroundColor = (body.style.backgroundColor === 'blue') ? 'red' : 'blue';
+  }
+
+  function flashText() {
+      var h1 = document.querySelector('h1');
+      h1.style.color = (h1.style.color === 'black') ? 'white' : 'black';
+  }
+
+  window.onload = onPageLoad;
+</script>
+<body>
+  <h1>Silly</h1>
+</body>
+</html>
